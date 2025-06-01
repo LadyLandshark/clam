@@ -24,7 +24,8 @@ llvm_map_components_to_libnames(LLVM_LIBS
 target_link_libraries(LlvmPasses
   ${SEA_DSA_LIBS}
   ## Needed if dynamic linking
-  ${LLVM_LIBS})
+  #${LLVM_LIBS})
+  LLVM)
 
 install(TARGETS LlvmPasses 
   ARCHIVE DESTINATION lib

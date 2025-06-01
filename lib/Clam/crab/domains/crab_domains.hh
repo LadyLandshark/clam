@@ -14,3 +14,4 @@
 #include "terms_intervals.hh"
 #include "terms_zones.hh"
 #include "wrapped_intervals.hh"
+#include "prob_state.hh"

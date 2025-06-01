@@ -30,6 +30,7 @@ add_llvm_library(ClamAnalysis ${CLAM_LIBS_TYPE} DISABLE_LLVM_LINK_LLVM_DYLIB
   crab/domains/terms_intervals.cc
   crab/domains/terms_zones.cc
   crab/domains/wrapped_intervals.cc
+  crab/domains/prob_state.cc
   Support/BoostException.cc
   Support/CFGPrinter.cc
   Properties/MemoryCheckUtils.cc
@@ -45,7 +46,8 @@ target_link_libraries (ClamAnalysis
   PRIVATE
   ${CRAB_LIBS}
   ## Needed if dynamic linking
-  ${LLVM_LIBS}
+  #${LLVM_LIBS}
+  LLVM
   ${SEA_DSA_LIBS})
 
 if (USE_COTIRE)
@@ -66,7 +68,8 @@ if (CLAM_INCLUDE_POST_TRANSFORMS)
     ${CRAB_LIBS}
     ## Needed if dynamic linking
     ClamAnalysis
-    ${LLVM_LIBS})
+	#${LLVM_LIBS})
+	LLVM)
   
   if (USE_COTIRE)
     cotire(ClamOptimizer)  

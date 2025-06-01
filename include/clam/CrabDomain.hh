@@ -67,7 +67,8 @@ constexpr Type OCT(11, "oct", "octagons from Apron or Elina", true, false);
 constexpr Type PK(12, "pk", "polyhedra from Apron or Elina", true, false);
 constexpr Type PK_PPLITE(13, "pk-pplite", "polyhedra from PPLite", true, false);  
 constexpr Type SIGN_CONSTANTS(14, "sign-const", "sign+constants", false, false);  
-constexpr std::array<Type, 14> List = {INTERVALS,
+constexpr Type PROB_STATE(15, "prob-state", "probability state", false, false);
+constexpr std::array<Type, 15> List = {INTERVALS,
                                        INTERVALS_CONGRUENCES,
                                        WRAPPED_INTERVALS,
                                        BOXES,
@@ -80,6 +81,7 @@ constexpr std::array<Type, 14> List = {INTERVALS,
                                        OCT,
                                        PK,
 				       PK_PPLITE,
-				       SIGN_CONSTANTS};
+				       SIGN_CONSTANTS,
+                       PROB_STATE};
 } // end namespace CrabDomain
 } // end namespace clam

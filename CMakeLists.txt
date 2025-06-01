@@ -276,7 +276,7 @@ if (TopLevel)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall")
 
 ## ------ sea-dsa ------- ##
-if (TopLevel)
+#if (TopLevel)
   if (IS_DIRECTORY "${SEADSA_ROOT}" AND EXISTS ${SEADSA_ROOT}/CMakeLists.txt)
     ## sea-dsa source code already exists out-of-the tree     
     message(STATUS "Clam: using sea-dsa found in ${SEADSA_ROOT}")
@@ -294,7 +294,7 @@ if (TopLevel)
     message (WARNING "Clam: sea-dsa is required but not found in ${SEADSA_SOURCE_DIR}. Run\n\tcmake --build . --target extra && cmake ${CMAKE_SOURCE_DIR}")
     return()
   endif()
-endif()
+  #endif()
 
 ## ------ llvm-seahorn ------- ##
 if (IS_DIRECTORY ${SEAHORN_LLVM_SOURCE_DIR} AND
