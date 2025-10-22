@@ -3,6 +3,7 @@
 #include "clam/CrabDomain.hh"
 #include <llvm/Support/raw_ostream.h>
 #include <climits>
+#include <vector>
 #include <string>
 
 namespace clam {
@@ -60,6 +61,8 @@ struct AnalysisParams {
   /* run checker after analysis has finished */
   CheckerKind check;
   unsigned check_verbose;
+  // Run analysis only on the mentioned functions
+  std::vector<std::string> function_list;
 
   AnalysisParams()
       : dom(CrabDomain::INTERVALS),
@@ -74,7 +77,7 @@ struct AnalysisParams {
         print_summaries(false), print_voi(false),
 	keep_shadow_vars(false),
 	output_crabir(""), output_json(""), store_invariants(true),
-        check(CheckerKind::NOCHECKS), check_verbose(0) {}
+        check(CheckerKind::NOCHECKS), check_verbose(0), function_list({}) {}
 
   void write(llvm::raw_ostream &o) const;  
 };

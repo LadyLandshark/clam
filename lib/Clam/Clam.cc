@@ -298,6 +298,18 @@ public:
       return;
     }
 
+	// Add support for only processing certain functions
+	if(!params.function_list.empty()) {
+		bool should_proc = false;
+		for(std::string& func_to_proc : params.function_list)
+		{
+			if(func_to_proc.compare(m_fun.getName().str()) == 0)
+				should_proc = true;
+		}
+		if(!should_proc)
+			return;
+	}
+
     if (DomainRegistry::count(params.dom)) {
       analyzeImpl(params, entry, DomainRegistry::at(params.dom),
                   abs_dom_assumptions, lin_csts_assumptions,
