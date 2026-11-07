@@ -11,8 +11,8 @@ cmake_policy(SET CMP0074 NEW)
 cmake_policy(SET CMP0077 NEW)
 endif()
 
-## LLVM 14 requires c++14
-set(CMAKE_CXX_STANDARD 14 CACHE STRING "C++ standard to conform to")
+## LLVM 14 requires c++1
+set(CMAKE_CXX_STANDARD 17 CACHE STRING "C++ standard to conform to")
 set(CMAKE_CXX_STANDARD_REQUIRED YES)
 set(CMAKE_CXX_EXTENSIONS NO)
 
